@@ -40,7 +40,7 @@ if (veces >= 1 && veces <= 5) {
 }
 
 if (ganaste > perdiste) {
-    alert(`Tú has ganado ${ganaste} veces y tu oponente solo ${perdiste} veces.\nEsto te convierte en el ganador de esta ronda.\nFelicidades!!! `);
+    alert(`Tú has ganado ${ganaste} veces y tu oponente ${perdiste} veces.\nEsto te convierte en el ganador de esta ronda.\nFelicidades!!! `);
 } else if (perdiste > ganaste){
     alert(`Tú has ganado ${ganaste} veces pero tu oponente te venció ${perdiste} veces!!.\nEsta vez la suerte no ha estado de tu lado.\nPero ya sabes lo que dicen. Mala suerte en el juego, buena suerte en el amor 😅 `);
 } else {
