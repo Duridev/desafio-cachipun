@@ -7,27 +7,27 @@ let perdiste = 0;
 if (veces >= 1 && veces <= 5) {
     while (veces > 0) {
         veces--;
-        let elige = prompt("Ingresa uno de los siguientes valores:\n\nPiedra\nPapel\nTijera\n\n**Recuerda escribir la primera letra con mayúscula.\n" );
+        let elige = prompt("Ingresa uno de los siguientes valores:\n\n  *Piedra\n  *Papel\n  *Tijera\n" ).toLowerCase;
 
 
-        if ((elige === "Piedra") || (elige === "Papel") || (elige === "Tijera")) {
-            let pcRandom =  Math.floor(Math.random() *  3 + 1);
+        if ((elige === "piedra") || (elige === "papel") || (elige === "tijera")) {
+            let pcRandom =  Math.floor(Math.random() *  3);
             let pcElige
             
-            if (pcRandom === 1) {
-                pcElige = "Piedra";
-            } else if (pcRandom ===  2) {
-                pcElige = "Papel";
+            if (pcRandom === 0) {
+                pcElige = "piedra";
+            } else if (pcRandom ===  1) {
+                pcElige = "papel";
             } else {
-                pcElige = "Tijera";
+                pcElige = "tijera";
             };
     
             if (elige === pcElige) {
                 alert(`Tu elegiste ${elige} y la computadora escogió  ${pcElige}.\nEsto es un Empateee!!!`);
-            } else if ((elige === "Piedra" && pcElige === "Tijera") || (elige === "Papel" && pcElige === "Piedra") || (elige === "Tijera" && pcElige === "Papel" ) ) {
+            } else if ((elige === "piedra" && pcElige === "tijera") || (elige === "papel" && pcElige === "piedra") || (elige === "tijera" && pcElige === "papel" ) ) {
                 alert(`Tu elegiste ${elige} y la computadora escogió  ${pcElige}.\nBuena jugada. Ganaste!!!`);
                 ganaste+=1;
-            } else if ((pcElige === "Piedra" && elige === "Tijera") || (pcElige === "Papel" && elige === "Piedra") || (elige === "Tijera" && pcElige === "Papel" ) ) {
+            } else {
                 alert(`Tu elegiste ${elige} y la computadora escogió  ${pcElige}.\nEsta vez perdiste.`);
                 perdiste+=1;
             }
@@ -46,4 +46,3 @@ if (ganaste > perdiste) {
 } else {
     alert(`Una ronda competitiva, Tú has ganado ${ganaste} ${ganaste == 1 ? "vez" : "veces"} y tu oponente te venció ${perdiste} ${perdiste == 1 ? "vez" : "veces"}.\n\nEs un Empate!!\n`);
 };
-
